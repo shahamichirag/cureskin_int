@@ -3,6 +3,6 @@ Feature: Search functionality test cases
 
   Scenario: User can search product based on given categories
     Given open main page
-    When click on "shop by category"
-    And click on "Body"
-    Then verify "Body" header is shown
+    When click on shop by category on main page
+    And click on the product category "body"
+    Then verify result for "body" category is shown

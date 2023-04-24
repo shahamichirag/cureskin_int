@@ -20,10 +20,10 @@ def input_search(context, search_word):
     sleep(4)
 
 
-@when('Click on search icon')
-def click_search_icon(context):
-    context.driver.find_element(*SEARCH_SUBMIT).click()
-    sleep(1)
+# @when('Click on search icon')
+# def click_search_icon(context):
+#     context.driver.find_element(*SEARCH_SUBMIT).click()
+#     sleep(1)
 
 
 @then('Product results for {search_word} are shown')

@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
-from base_page import Page
+from pages.base_page import Page
+from time import sleep
 
 
-class Mainpage(Page):
+class MainPage(Page):
 
     SHOP_CATEGORY = (By.XPATH, "//span[@class='label' and text()='Shop by Category']")
     PRODUCT_CATEGORY_BODY = (By.CSS_SELECTOR, "a.header__menu-item.list-menu__item.focus-inset[href='/collections/body']")
@@ -15,6 +16,7 @@ class Mainpage(Page):
 
     def click_body_category(self):
         self.find_element(*self.PRODUCT_CATEGORY_BODY).click()
+        sleep(5)
 
-    def verify_body_category_result(self):
-        self.verify_url_contains_query('body')
+
+
