@@ -12,11 +12,11 @@ def click_shop_category(context):
     context.app.main_page.click_shop_category()
 
 
-@when('click on the product category "body"')
-def click_body_category(context):
-    context.app.main_page.click_body_category()
+@when('click on the product category {category}')
+def click_product_category(context, category):
+    context.app.main_page.click_product_category(category)
 
 
-@then('verify result for "body" category is shown')
-def verify_body_category_result(context):
-    context.app.search_result_page.verify_body_category_result()
+@then('verify result for {category_name} category is shown')
+def verify_product_category_result(context, category_name):
+    context.app.search_result_page.verify_product_category_result(category_name)
