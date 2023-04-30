@@ -48,3 +48,6 @@ class Page:
 
     def verify_url_contains_query(self, query):
         assert query in self.driver.current_url, f'{query} not in {self.driver.current_url}'
+
+    def verify_alert_appeared(self):
+        self.wait.until(EC.alert_is_present())

@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import Page
 from time import sleep
 import re
+from selenium.webdriver.common.alert import Alert
 
 
 class ShopFooter(Page):
@@ -28,7 +29,13 @@ class ShopFooter(Page):
         self.find_element(*self.EMAIL_SUBMIT_BTN).click()
 
     def unsuccessful_subscription(self):
-        assert not self.find_element(*self.SUCCESS_SUBSCRIPTION).is_displayed()
+        expected_message = 'Please include an @ in the email address'
+        alert = Alert(self.driver)
+        self.verify_alert_appeared()
+        actual_message = alert.text
+        assert expected_message in actual_message; \
+            f'Expected to see {expected_message} but got {actual_message}'
+
 
 
 

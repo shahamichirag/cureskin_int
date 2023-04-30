@@ -6,5 +6,5 @@ Feature: Shop page footer fuctionality test cases
     When go to the email field located at the footer of the shop page
     And enter a valid email email@g.mail and hit the submit button
     And verify successful subscription
-    And enter an invalid email email@gmail.com and hit the submit button
+    And enter an invalid email emailgmail.com and hit the submit button
     Then verify unsuccessful attempt of subscription
